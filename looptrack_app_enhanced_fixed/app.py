@@ -43,7 +43,10 @@ st.title("✈ Aircraft Cabin Materials Tracker")
 st.markdown("Explore materials, certifications, and lifecycle guidance with enhanced UI.")
 
 # Load data
-data = pd.read_csv("cabin_materials.csv")
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "cabin_materials.csv")
+data = pd.read_csv(csv_path)
 
 # Material selection
 material = st.selectbox("Select a Material", data['material'])
